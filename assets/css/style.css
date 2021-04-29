@@ -72,3 +72,82 @@ header .header-content .header-content__form form button {
 header .header-content .header-content__form form button:hover {
   background: #001489;
 }
+
+main {
+  padding: 40px 0;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+main .main-heading {
+  margin-bottom: 100px;
+  font-weight: 400;
+  font-size: 1.5em;
+}
+main .main-products .main-products__machine .main-products__machine--image {
+  position: relative;
+}
+main .main-products .main-products__machine .main-products__machine--image img {
+  width: 100%;
+  border: 1px solid #999;
+}
+main .main-products .main-products__machine .dots-left:before {
+  content: "";
+  background-image: url(../images/dots.png);
+  width: 143px;
+  height: 143px;
+  position: absolute;
+  left: -12px;
+  top: -28px;
+}
+main .main-products .main-products__machine .dots-right:before {
+  content: "";
+  background-image: url(../images/dots.png);
+  width: 143px;
+  height: 143px;
+  position: absolute;
+  right: -12px;
+  top: -28px;
+  transform: rotate(90deg);
+}
+main .main-products .main-products__machine .main-products__machine--description {
+  padding-right: 30px;
+}
+main .main-products .main-products__machine .main-products__machine--description .title {
+  font-family: "Antonio", sans-serif;
+  text-transform: uppercase;
+  color: #00a9e0;
+  font-weight: 700;
+  font-size: 2em;
+}
+main .main-products .main-products__machine .main-products__machine--description .subtitle {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+main .main-products .main-products__machine .main-products__machine--description p {
+  font-size: 0.7em;
+}
+main .main-cta {
+  background: #00a9e0;
+  margin-top: 80px;
+  padding: 20px 0;
+}
+main .main-cta .main-cta__text {
+  font-size: 2em;
+  font-family: "Antonio", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+}
+main .main-cta .main-cta__button a {
+  background: #001489;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 11px 40px;
+  border: 0;
+  transition: all ease-in-out 0.5s;
+}
+main .main-cta .main-cta__button a:hover {
+  background: #333;
+}
