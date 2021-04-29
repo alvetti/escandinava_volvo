@@ -6,44 +6,116 @@ $c-azul_oscuro: #001489;
 $c-azul_claro: #00a9e0;
 $c-dark: #333;
 $c-gray: #999;
+$c-light: #f4f4f4;
 $c-white: #fff;
 
 //FONTS
 $f-antonio: 'Antonio', sans-serif;
 $f-poppins: 'Poppins', sans-serif;
 
+//BREAKPOINTS
+$xl: 1199px;
+$lg: 991px;
+$md: 767px;
+$sm: 575px;
+
 header{
-    background-image: url(../images/header.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 80vh;
     min-height: 660px;
     border-bottom: 20px solid $c-azul_oscuro;
     font-family: $f-poppins;
     color: $c-dark;
+    background-color: $c-dark;
+    position: relative;
+    min-width: 250px;
+    @media screen and (max-width: $sm){
+        height: auto;
+    }
     .header-shadow{
         background-image: url(../images/shadow.png);
         position: absolute;
         top: 0;
         width: 100%;
         height: 526px;
+        z-index: 1;
+        @media screen and (max-width: $sm){
+            display: none;
+        }
+    }
+    .header-bg{
+        background-image: url(../images/header.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        position: absolute;
         z-index: 0;
+        @media screen and (max-width: $md){
+            background-position: bottom;
+        }
+        @media screen and (max-width: $sm){
+            height: 230px;
+            top: 85px;
+            position: relative;
+        }
     }
     .header-content{
         position: relative;
-        z-index: 1;
+        z-index: 2;
         height: 100%;
-        .header-content__logo{
-            margin-top: 30px;
+        @media screen and (max-width: $sm){
+            top: -230px;
+            padding-left: 0;
+            padding-right: 0;
         }
-        .header-content__logo--volvo{
-            margin-top: 30px;
+        .header-content__logos{
+            @media screen and (max-width: $sm){
+                background: $c-dark;
+                height: 85px;
+                padding: 0 15px;
+                margin: 0;
+            }
+            .header-content__logo{
+                margin-top: 30px;
+                @media screen and (max-width: $sm){
+                    margin-top: 15px;
+                    margin-bottom: 15px;
+                }
+                svg{
+                    max-width: 400px;
+                    .st0{
+                        fill: $c-white;
+                    }
+                    @media screen and (max-width: $sm){
+                        max-width: 200px;
+                    }
+                }
+            }
+            .header-content__logo--partner{
+                margin-top: 30px;
+                @media screen and (max-width: $md){
+                    margin-top: 15px;
+                    img{
+                        max-width: 80px;
+                    }
+                }
+                @media screen and (max-width: $sm){
+                    img{
+                        max-width: 55px;
+                    }
+                }
+            }
         }
         .header-content__form{
             background: rgba(255,255,255,.9);
             position: absolute;
             right: 0;
             bottom: 0;
+            @media screen and (max-width: $sm){
+                position: relative;
+                top: 230px;
+                background: $c-white;
+            }
             h2{
                 background: $c-azul_oscuro;
                 color: $c-white;
@@ -54,16 +126,30 @@ header{
                 font-size: 2em;
                 text-transform: uppercase;
                 padding: 15px;
+                @media screen and (max-width: $lg){
+                    font-size: 1.5em;
+                }
+                @media screen and (max-width: $md){
+                    font-size: 2em;
+                }
+            }
+            p{
+                @media screen and (max-width: $lg){
+                    font-size: .8em;
+                }
             }
             form{
                 padding: 0 15px;
                 input{
                     width: 100%;
                     margin-bottom: 10px;
-                    height: 40px;
-                    padding: 20px;
+                    height: 35px;
+                    padding: 15px;
                     border: 1px solid $c-gray;
                     background: transparent;
+                    @media screen and (max-width: $lg){
+                        font-size: .8em;
+                    }
                 }
                 button{
                     width: 100%;
@@ -89,6 +175,7 @@ main{
     padding-top: 40px;
     color: $c-dark;
     font-family: $f-poppins;
+    min-width: 250px;
     .main-heading{
         margin-bottom: 100px;
         font-weight: 400;
@@ -96,11 +183,24 @@ main{
     }
     .main-products{
         .main-products__machine{
+            &:first-of-type{
+            @media screen and (max-width: $lg){
+                    margin-bottom: 80px;
+                }
+            }
             .main-products__machine--image{
                 position: relative;
                 img{
                     width: 100%;
                     border: 1px solid $c-gray;
+                    @media screen and (max-width: $sm){
+                        background-position: bottom;
+                        position: relative;
+                        z-index: 5;
+                    }
+                }
+                @media screen and (max-width: $lg){
+                    margin-bottom: 20px;
                 }
             }
             .dots-left{
@@ -112,6 +212,11 @@ main{
                     position: absolute;
                     left: -12px;
                     top: -28px;
+                    @media screen and (max-width: $sm){
+                        left: 4px;
+                        z-index: 0;
+                        top: -12px;
+                    }
                 }
             }
             .dots-right{
@@ -124,6 +229,11 @@ main{
                     right: -12px;
                     top: -28px;
                     transform: rotate(90deg);
+                    @media screen and (max-width: $sm){
+                        right: 4px;
+                        z-index: 0;
+                        top: -12px;
+                    }
                 }
             }
             .main-products__machine--description{
@@ -144,30 +254,52 @@ main{
                     font-size: .7em;
                 }
             }
+            &.invert{
+                @media screen and (max-width: $md){
+                    .row{
+                        flex-direction: column-reverse
+                    }
+                }
+            }
         }
     }
     .main-cta{
         background: $c-azul_claro;
         margin-top: 80px;
         padding: 20px 0;
-        .main-cta__text{
-            font-size: 2em;
-            font-family: $f-antonio;
-            text-transform: uppercase;
-            font-weight: 700;
-            color: $c-white;
+        @media screen and (max-width: $sm){
+            text-align: center;
         }
-        .main-cta__button{
-            a{
-                background: $c-azul_oscuro;
-                border-radius: 0;
+        .row{
+            align-items: center;
+            justify-content: center;
+            .main-cta__text{
+                font-size: 2em;
+                font-family: $f-antonio;
                 text-transform: uppercase;
                 font-weight: 700;
-                padding: 11px 40px;
-                border: 0;
-                transition: all ease-in-out .5s;
-                &:hover{
-                    background: $c-dark;
+                color: $c-white;
+            }
+            .main-cta__button{
+                @media screen and (max-width: $sm){
+                    text-align: center!important;
+                    margin-top: 10px;
+                }
+                a{
+                    background: $c-azul_oscuro;
+                    border-radius: 0;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    border: 0;
+                    padding: 10px 30px;
+                    transition: all ease-in-out .5s;
+                    &:hover{
+                        background: $c-dark;
+                    }
+                    @media screen and (max-width: $md){
+                        padding: 10px;
+                        font-size: .9em;
+                    }
                 }
             }
         }
@@ -176,18 +308,29 @@ main{
 
 footer{
     font-family: $f-poppins;
+    background: $c-light;
+    min-width: 250px;
     .footer-legal{
         color: $c-gray;
         font-size: .6em;
-        padding: 20px 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
     .footer-social{
+        background: $c-white;
+        padding: 20px 0;
         ul{
             list-style: none;
             margin: 0;
             padding: 0;
-            margin: 40px 0;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
             li{
+                text-align: center;
+                svg{
+                    max-width: 50px;
+                }
                 .instagram{
                     path{
                         fill: #833ab4;

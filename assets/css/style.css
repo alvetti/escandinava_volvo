@@ -1,14 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 header {
-  background-image: url(../images/header.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 80vh;
   min-height: 660px;
   border-bottom: 20px solid #001489;
   font-family: "Poppins", sans-serif;
   color: #333;
+  background-color: #333;
+  position: relative;
+  min-width: 250px;
+}
+@media screen and (max-width: 575px) {
+  header {
+    height: auto;
+  }
 }
 header .header-shadow {
   background-image: url(../images/shadow.png);
@@ -16,24 +21,102 @@ header .header-shadow {
   top: 0;
   width: 100%;
   height: 526px;
+  z-index: 1;
+}
+@media screen and (max-width: 575px) {
+  header .header-shadow {
+    display: none;
+  }
+}
+header .header-bg {
+  background-image: url(../images/header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
   z-index: 0;
+}
+@media screen and (max-width: 767px) {
+  header .header-bg {
+    background-position: bottom;
+  }
+}
+@media screen and (max-width: 575px) {
+  header .header-bg {
+    height: 230px;
+    top: 85px;
+    position: relative;
+  }
 }
 header .header-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   height: 100%;
 }
-header .header-content .header-content__logo {
+@media screen and (max-width: 575px) {
+  header .header-content {
+    top: -230px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 575px) {
+  header .header-content .header-content__logos {
+    background: #333;
+    height: 85px;
+    padding: 0 15px;
+    margin: 0;
+  }
+}
+header .header-content .header-content__logos .header-content__logo {
   margin-top: 30px;
 }
-header .header-content .header-content__logo--volvo {
+@media screen and (max-width: 575px) {
+  header .header-content .header-content__logos .header-content__logo {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+header .header-content .header-content__logos .header-content__logo svg {
+  max-width: 400px;
+}
+header .header-content .header-content__logos .header-content__logo svg .st0 {
+  fill: #fff;
+}
+@media screen and (max-width: 575px) {
+  header .header-content .header-content__logos .header-content__logo svg {
+    max-width: 200px;
+  }
+}
+header .header-content .header-content__logos .header-content__logo--partner {
   margin-top: 30px;
+}
+@media screen and (max-width: 767px) {
+  header .header-content .header-content__logos .header-content__logo--partner {
+    margin-top: 15px;
+  }
+  header .header-content .header-content__logos .header-content__logo--partner img {
+    max-width: 80px;
+  }
+}
+@media screen and (max-width: 575px) {
+  header .header-content .header-content__logos .header-content__logo--partner img {
+    max-width: 55px;
+  }
 }
 header .header-content .header-content__form {
   background: rgba(255, 255, 255, 0.9);
   position: absolute;
   right: 0;
   bottom: 0;
+}
+@media screen and (max-width: 575px) {
+  header .header-content .header-content__form {
+    position: relative;
+    top: 230px;
+    background: #fff;
+  }
 }
 header .header-content .header-content__form h2 {
   background: #001489;
@@ -46,16 +129,36 @@ header .header-content .header-content__form h2 {
   text-transform: uppercase;
   padding: 15px;
 }
+@media screen and (max-width: 991px) {
+  header .header-content .header-content__form h2 {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 767px) {
+  header .header-content .header-content__form h2 {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 991px) {
+  header .header-content .header-content__form p {
+    font-size: 0.8em;
+  }
+}
 header .header-content .header-content__form form {
   padding: 0 15px;
 }
 header .header-content .header-content__form form input {
   width: 100%;
   margin-bottom: 10px;
-  height: 40px;
-  padding: 20px;
+  height: 35px;
+  padding: 15px;
   border: 1px solid #999;
   background: transparent;
+}
+@media screen and (max-width: 991px) {
+  header .header-content .header-content__form form input {
+    font-size: 0.8em;
+  }
 }
 header .header-content .header-content__form form button {
   width: 100%;
@@ -77,11 +180,17 @@ main {
   padding-top: 40px;
   color: #333;
   font-family: "Poppins", sans-serif;
+  min-width: 250px;
 }
 main .main-heading {
   margin-bottom: 100px;
   font-weight: 400;
   font-size: 1.5em;
+}
+@media screen and (max-width: 991px) {
+  main .main-products .main-products__machine:first-of-type {
+    margin-bottom: 80px;
+  }
 }
 main .main-products .main-products__machine .main-products__machine--image {
   position: relative;
@@ -89,6 +198,18 @@ main .main-products .main-products__machine .main-products__machine--image {
 main .main-products .main-products__machine .main-products__machine--image img {
   width: 100%;
   border: 1px solid #999;
+}
+@media screen and (max-width: 575px) {
+  main .main-products .main-products__machine .main-products__machine--image img {
+    background-position: bottom;
+    position: relative;
+    z-index: 5;
+  }
+}
+@media screen and (max-width: 991px) {
+  main .main-products .main-products__machine .main-products__machine--image {
+    margin-bottom: 20px;
+  }
 }
 main .main-products .main-products__machine .dots-left:before {
   content: "";
@@ -99,6 +220,13 @@ main .main-products .main-products__machine .dots-left:before {
   left: -12px;
   top: -28px;
 }
+@media screen and (max-width: 575px) {
+  main .main-products .main-products__machine .dots-left:before {
+    left: 4px;
+    z-index: 0;
+    top: -12px;
+  }
+}
 main .main-products .main-products__machine .dots-right:before {
   content: "";
   background-image: url(../images/dots.png);
@@ -108,6 +236,13 @@ main .main-products .main-products__machine .dots-right:before {
   right: -12px;
   top: -28px;
   transform: rotate(90deg);
+}
+@media screen and (max-width: 575px) {
+  main .main-products .main-products__machine .dots-right:before {
+    right: 4px;
+    z-index: 0;
+    top: -12px;
+  }
 }
 main .main-products .main-products__machine .main-products__machine--description {
   padding-right: 30px;
@@ -127,44 +262,85 @@ main .main-products .main-products__machine .main-products__machine--description
 main .main-products .main-products__machine .main-products__machine--description p {
   font-size: 0.7em;
 }
+@media screen and (max-width: 767px) {
+  main .main-products .main-products__machine.invert .row {
+    flex-direction: column-reverse;
+  }
+}
 main .main-cta {
   background: #00a9e0;
   margin-top: 80px;
   padding: 20px 0;
 }
-main .main-cta .main-cta__text {
+@media screen and (max-width: 575px) {
+  main .main-cta {
+    text-align: center;
+  }
+}
+main .main-cta .row {
+  align-items: center;
+  justify-content: center;
+}
+main .main-cta .row .main-cta__text {
   font-size: 2em;
   font-family: "Antonio", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   color: #fff;
 }
-main .main-cta .main-cta__button a {
+@media screen and (max-width: 575px) {
+  main .main-cta .row .main-cta__button {
+    text-align: center !important;
+    margin-top: 10px;
+  }
+}
+main .main-cta .row .main-cta__button a {
   background: #001489;
   border-radius: 0;
   text-transform: uppercase;
   font-weight: 700;
-  padding: 11px 40px;
   border: 0;
+  padding: 10px 30px;
   transition: all ease-in-out 0.5s;
 }
-main .main-cta .main-cta__button a:hover {
+main .main-cta .row .main-cta__button a:hover {
   background: #333;
+}
+@media screen and (max-width: 767px) {
+  main .main-cta .row .main-cta__button a {
+    padding: 10px;
+    font-size: 0.9em;
+  }
 }
 
 footer {
   font-family: "Poppins", sans-serif;
+  background: #f4f4f4;
+  min-width: 250px;
 }
 footer .footer-legal {
   color: #999;
   font-size: 0.6em;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+footer .footer-social {
+  background: #fff;
   padding: 20px 0;
 }
 footer .footer-social ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  margin: 40px 0;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+footer .footer-social ul li {
+  text-align: center;
+}
+footer .footer-social ul li svg {
+  max-width: 50px;
 }
 footer .footer-social ul li .instagram path {
   fill: #833ab4;
