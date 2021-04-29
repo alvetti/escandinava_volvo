@@ -74,7 +74,7 @@ header .header-content .header-content__form form button:hover {
 }
 
 main {
-  padding: 40px 0;
+  padding-top: 40px;
   color: #333;
   font-family: "Poppins", sans-serif;
 }
@@ -150,4 +150,35 @@ main .main-cta .main-cta__button a {
 }
 main .main-cta .main-cta__button a:hover {
   background: #333;
+}
+
+footer {
+  font-family: "Poppins", sans-serif;
+}
+footer .footer-legal {
+  color: #999;
+  font-size: 0.6em;
+  padding: 20px 0;
+}
+footer .footer-social ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin: 40px 0;
+}
+footer .footer-social ul li .instagram path {
+  fill: #833ab4;
+}
+footer .footer-social ul li .facebook path {
+  fill: #3b5998;
+}
+footer .footer-social ul li .youtube path {
+  fill: #c4302b;
+}
+footer .footer-social ul li .linkedin path {
+  fill: #0e76a8;
+}
+footer .footer-social ul li a:hover path {
+  transition: all ease-in-out 0.5s;
+  fill: #999;
 }

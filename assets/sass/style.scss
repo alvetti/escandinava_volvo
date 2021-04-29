@@ -86,7 +86,7 @@ header{
 }
 
 main{
-    padding: 40px 0;
+    padding-top: 40px;
     color: $c-dark;
     font-family: $f-poppins;
     .main-heading{
@@ -168,6 +168,53 @@ main{
                 transition: all ease-in-out .5s;
                 &:hover{
                     background: $c-dark;
+                }
+            }
+        }
+    }
+}
+
+footer{
+    font-family: $f-poppins;
+    .footer-legal{
+        color: $c-gray;
+        font-size: .6em;
+        padding: 20px 0;
+    }
+    .footer-social{
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            margin: 40px 0;
+            li{
+                .instagram{
+                    path{
+                        fill: #833ab4;
+                    }
+                }
+                .facebook{
+                    path{
+                        fill: #3b5998;
+                    }
+                }
+                .youtube{
+                    path{
+                        fill: #c4302b;
+                    }
+                }
+                .linkedin{
+                    path{
+                        fill: #0e76a8;
+                    }
+                }
+                a{
+                    &:hover{
+                    path{
+                            transition: all ease-in-out .5s;
+                            fill: $c-gray;
+                        }
+                    }
                 }
             }
         }
