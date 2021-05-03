@@ -2,7 +2,7 @@ $("#contactForm").validator().on("submit", function (event) {
     if (event.isDefaultPrevented()) {
         // handle the invalid form...
         formError();
-        submitMSG(false, "�Completaste todos los campos correctamente?");
+        submitMSG(false, "¿Completaste todos los campos correctamente?");
     } else {
         // everything looks good!
         event.preventDefault();
@@ -18,17 +18,19 @@ function submitForm() {
     // Initiate Variables With Form Content
     var name = $("#name").val();
     var email = $("#email").val();
-    var subject = $("#subject").val();
-    var message = $("#message").val();
+    var phone = $("#phone").val();
+    var company = $("#company").val();
+    var position = $("#position").val();
 
 
     $.ajax({
         type: "POST",
-        url: "https://condimo.com/condimolike/assets/core/sendemail.php",
-        data: "name=" + name + "&email=" + email + "&subject=" + subject + "&message=" + message,
+        url: "https://escandinaviaplata.com/volvo/assets/core/sendemail.php",
+        data: "name=" + name + "&email=" + email + "&phone=" + phone + "&company=" + company +"&position=" + position,
         success: function (text) {
-            if (text == "success") {
+            if (text == "Gracias, recibimos tu solicitud y en breve nos comunicaremos con vos.") {
                 formSuccess();
+                submitMSG(true, text);
             } else {
                 formError();
                 submitMSG(false, text);
@@ -39,8 +41,6 @@ function submitForm() {
 }
 
 function formSuccess() {
-    $("#loader").removeClass();
-    window.location = "https://condimo.com/condimolike/gracias.php";
 }
 
 function formError() {

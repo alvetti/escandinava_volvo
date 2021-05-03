@@ -11,37 +11,37 @@ if (empty($_POST["name"])) {
 
 // EMAIL
 if (empty($_POST["email"])) {
-    $errorMSG .= "El email es requerido ";
+    $errorMSG .= "El correo es requerido ";
 } else {
     $email = $_POST["email"];
 }
 
-// EMAIL
-if (empty($_POST["subject"])) {
-    $errorMSG .= "El asunto es requerido ";
+// TELEFONO
+if (empty($_POST["phone"])) {
+    $errorMSG .= "El telefono es requerido ";
 } else {
-    $subject = $_POST["subject"];
+    $subject = $_POST["phone"];
 }
 
-
-// MESSAGE
-if (empty($_POST["message"])) {
-    $errorMSG .= "El mensaje es requerido ";
+// EMPRESA
+if (empty($_POST["company"])) {
+    $errorMSG .= "La empresa es requerida ";
 } else {
-    $message = $_POST["message"];
+    $subject = $_POST["company"];
 }
 
 
 $EmailTo = "alan@alvetti.com";
-$Subject = "Nuevo Mensaje desde Condimo Like";
+$Subject = "Nuevo Mensaje landing Escandinava del Plata - Volvo";
 
 // prepare email body text
 $Body = 'Nombre: '.$name."\n";
 $Body .= 'E-mail: '.$email."\n";
-$Body .= 'Asunto: '.$subject."\n";
-$Body .= 'Mensaje: '.$message;
+$Body .= 'Telefono: '.$phone."\n";
+$Body .= 'Empresa: '.$company."\n";
+$Body .= 'Cargo: '.$position;
 
-$headers = "From: Contacto Site Condimo Like <alan@alvetti.com>\r\n";
+$headers = "From: Contacto Landing Escandinava del Plata - Volvo <alan@alvetti.com>\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 
@@ -50,7 +50,7 @@ $success = mail($EmailTo, $Subject, $Body, $headers);
 
 // redirect to success page
 if ($success && $errorMSG == ""){
-   echo "success";
+   echo "Suceso";
 }else{
     if($errorMSG == ""){
         echo "Ups, algo falló.";

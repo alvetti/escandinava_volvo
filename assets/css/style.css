@@ -110,6 +110,7 @@ header .header-content .header-content__form {
   position: absolute;
   right: 0;
   bottom: 0;
+  padding-bottom: 40px;
 }
 @media screen and (max-width: 575px) {
   header .header-content .header-content__form {
@@ -162,7 +163,6 @@ header .header-content .header-content__form form input {
 }
 header .header-content .header-content__form form button {
   width: 100%;
-  margin-bottom: 40px;
   border-radius: 0;
   background: #00a9e0;
   border: 0;
